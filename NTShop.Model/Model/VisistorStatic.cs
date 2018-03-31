@@ -9,7 +9,7 @@ namespace NTShop.Model.Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { set; get; }
+        public Guid ID { set; get; }
 
         [Required]
         public DateTime VisitedDate { set; get; }
