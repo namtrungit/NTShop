@@ -8,7 +8,6 @@ namespace NTShop.Model.Model
     internal class VisistorStatic
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ID { set; get; }
 
         [Required]
