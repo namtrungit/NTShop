@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace NTShop.Model.Model
 {
     [Table("VisistorStatics")]
-    internal class VisistorStatic
+    public class VisistorStatic
     {
         [Key]
         public Guid ID { set; get; }
