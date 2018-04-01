@@ -6,7 +6,7 @@ namespace NTShop.Data
     public class NTShopDbContext : DbContext
     {
         //Contructor
-        public NTShopDbContext() : base("NTShopConnection") // key của Connection trong App.Config
+        public NTShopDbContext() : base("NTShop") // key của Connection trong App.Config
         {
             this.Configuration.LazyLoadingEnabled = false;
         }

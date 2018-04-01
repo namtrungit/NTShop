@@ -49,14 +49,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InfraStructure\DbFactory.cs" />
+    <Compile Include="InfraStructure\Disposable.cs" />
     <Compile Include="InfraStructure\IDbFactory.cs" />
-    <Compile Include="InfraStructure\IRespository.cs" />
+    <Compile Include="InfraStructure\IRepository.cs" />
     <Compile Include="InfraStructure\IUnitOfWork.cs" />
+    <Compile Include="InfraStructure\RepositoryBase.cs" />
+    <Compile Include="InfraStructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201804010821099_InitialDB.cs" />
+    <Compile Include="Migrations\201804010821099_InitialDB.Designer.cs">
+      <DependentUpon>201804010821099_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NTShopDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Respositories\ProductCategoryRepository.cs" />
+    <Compile Include="Respositories\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -64,9 +77,15 @@
       <Project>{03082002-42e4-45eb-9c8d-982399b81f5b}</Project>
       <Name>NTShop.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NTShop.Model\NTShop.Model.csproj">
+      <Project>{dbed16ae-b9f0-46e4-a7c7-7859cc1ac16e}</Project>
+      <Name>NTShop.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Respositories\" />
+    <EmbeddedResource Include="Migrations\201804010821099_InitialDB.resx">
+      <DependentUpon>201804010821099_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
