@@ -17,6 +17,8 @@ namespace NTShop.Service
 
         IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow);
 
+        IEnumerable<Post> GetByCategoryId(int categoryId, int page, int pageSize, out int totalRow);
+
         Post GetById(int id);
 
         IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
@@ -54,12 +56,17 @@ namespace NTShop.Service
         public IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)
         {
             //TODO: Select all post by tag
-            return _postRepository.GetMultiPaging(x => x.Status, out totalRow, page, pageSize);
+            return _postRepository.GetAllByTag(tag, page, pageSize, out totalRow);
         }
 
         public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)
         {
             return _postRepository.GetMultiPaging(x => x.Status, out totalRow, page, pageSize);
+        }
+
+        public IEnumerable<Post> GetByCategoryId(int categoryId, int page, int pageSize, out int totalRow)
+        {
+            return _postRepository.GetMultiPaging(x => x.Status && x.CategoryID == categoryId, out totalRow, page, pageSize, new string[] { "PostCategory" });
         }
 
         public Post GetById(int id)
