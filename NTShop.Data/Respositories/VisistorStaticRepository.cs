@@ -3,7 +3,7 @@ using NTShop.Model.Model;
 
 namespace NTShop.Data.Respositories
 {
-    public interface IVisistorStaticRepository
+    public interface IVisistorStaticRepository : IRepository<VisistorStatic>
     {
     }
 

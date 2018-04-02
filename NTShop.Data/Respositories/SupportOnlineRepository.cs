@@ -3,7 +3,7 @@ using NTShop.Model.Model;
 
 namespace NTShop.Data.Respositories
 {
-    public interface ISupportOnlineRepository
+    public interface ISupportOnlineRepository : IRepository<SupportOnline>
     {
     }
 
