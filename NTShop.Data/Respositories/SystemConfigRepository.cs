@@ -9,7 +9,7 @@ namespace NTShop.Data.Respositories
 
     public class SystemConfigRepository : RepositoryBase<SystemConfig>, ISystemConfigRepository
     {
-        public SystemConfigRepository(DbFactory dbFactory) : base(dbFactory)
+        public SystemConfigRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
     }

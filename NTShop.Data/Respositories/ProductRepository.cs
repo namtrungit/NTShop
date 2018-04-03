@@ -9,7 +9,7 @@ namespace NTShop.Data.Respositories
 
     public class ProductRepository : RepositoryBase<Product>, IProductRepository
     {
-        public ProductRepository(DbFactory dbFactory) : base(dbFactory)
+        public ProductRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
     }

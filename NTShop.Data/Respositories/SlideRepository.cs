@@ -9,7 +9,7 @@ namespace NTShop.Data.Respositories
 
     public class SlideRepository : RepositoryBase<Slide>, ISlideRepository
     {
-        public SlideRepository(DbFactory dbFactory) : base(dbFactory)
+        public SlideRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
     }

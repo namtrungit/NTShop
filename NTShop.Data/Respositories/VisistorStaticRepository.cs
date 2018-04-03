@@ -9,7 +9,7 @@ namespace NTShop.Data.Respositories
 
     public class VisistorStaticRepository : RepositoryBase<VisistorStatic>, IVisistorStaticRepository
     {
-        public VisistorStaticRepository(DbFactory dbFactory) : base(dbFactory)
+        public VisistorStaticRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
     }

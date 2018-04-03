@@ -9,7 +9,7 @@ namespace NTShop.Data.Respositories
 
     public class FooterRepository : RepositoryBase<Footer>
     {
-        public FooterRepository(DbFactory dbFactory) : base(dbFactory)
+        public FooterRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
     }
