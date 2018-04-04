@@ -7,13 +7,13 @@ namespace NTShop.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialDB : IMigrationMetadata
+    public sealed partial class updateDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updateDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804010821099_InitialDB"; }
+            get { return "201804031252307_updateDB"; }
         }
         
         string IMigrationMetadata.Source

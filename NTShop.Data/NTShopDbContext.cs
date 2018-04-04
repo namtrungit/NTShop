@@ -6,7 +6,7 @@ namespace NTShop.Data
     public class NTShopDbContext : DbContext
     {
         //Contructor
-        public NTShopDbContext() : base("NTShop") // key của Connection trong App.Config
+        public NTShopDbContext() : base("NTShopConnection") // key của Connection trong App.Config
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
@@ -28,6 +28,7 @@ namespace NTShop.Data
         public DbSet<SystemConfig> SystemConfigs { set; get; }
         public DbSet<Tag> Tags { set; get; }
         public DbSet<VisistorStatic> VisistorStatics { set; get; }
+        public DbSet<Error> Errors { set; get; }
 
         //Ghi đè phương thức này vs DbContext, sẽ chạy khi khởi tạo Entity Frameword
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
