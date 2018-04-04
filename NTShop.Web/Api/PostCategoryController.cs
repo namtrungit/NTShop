@@ -22,17 +22,12 @@ namespace NTShop.Web.Api
         {
             return CreateHttpResponse(request, () =>
             {
-                HttpResponseMessage respone = null;
-                if (ModelState.IsValid)
-                {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var list = _postCategoryService.GetAll();
-                    respone = request.CreateResponse(HttpStatusCode.OK, list);
-                }
-                return respone;
+                var listCategory = _postCategoryService.GetAll();
+
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategory);
+
+
+                return response;
             });
         }
 
